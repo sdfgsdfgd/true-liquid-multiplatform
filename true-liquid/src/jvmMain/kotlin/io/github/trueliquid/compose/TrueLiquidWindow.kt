@@ -23,12 +23,18 @@ import androidx.compose.ui.window.WindowState
 import kotlinx.coroutines.delay
 
 object TrueLiquidRuntime {
+    @Volatile
+    private var configured = false
+
+    @Synchronized
     fun configureProcess() {
+        if (configured) return
         System.setProperty("compose.interop.blending", "true")
         System.setProperty("sun.awt.noerasebackground", "true")
         System.setProperty("sun.awt.erasebackgroundonresize", "false")
         System.setProperty("skiko.renderApi", "METAL")
         System.setProperty("SKIKO_CLEAR_COLOR", "0x00000000")
+        configured = true
     }
 }
 
@@ -109,6 +115,8 @@ fun TrueLiquidWindow(
     draggable: Boolean = true,
     content: @Composable TrueLiquidWindowScope.() -> Unit,
 ) {
+    TrueLiquidRuntime.configureProcess()
+
     Window(
         title = title,
         state = state,

@@ -44,15 +44,12 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import io.github.trueliquid.compose.TrueLiquidDefaults
 import io.github.trueliquid.compose.TrueLiquidMode
-import io.github.trueliquid.compose.TrueLiquidRuntime
 import io.github.trueliquid.compose.TrueLiquidStyle
 import io.github.trueliquid.compose.TrueLiquidWindow
 import io.github.trueliquid.compose.trueLiquidDragRegion
 import kotlin.math.roundToInt
 
 fun main(args: Array<String>) = application {
-    TrueLiquidRuntime.configureProcess()
-
     val title = System.getProperty("trueLiquid.title")?.takeIf { it.isNotBlank() } ?: "True Liquid Compose"
     val initiallyExpanded = args.contains("--expanded") || System.getProperty("trueLiquid.defaultExpanded") == "true"
     val defaultStyle = initialStyle(args)

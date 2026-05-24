@@ -19,7 +19,7 @@ The macOS backend is intentionally stronger than ordinary Compose-only glass bec
 
 ## Status
 
-`0.1.0-alpha01` is the first intended alpha line. The artifact is not published yet.
+`0.1.0-alpha02` is the current alpha line on Maven Central.
 
 Platform shape:
 
@@ -42,20 +42,16 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.sdfgsdfgd:true-liquid:0.1.0-alpha01")
+    implementation("io.github.sdfgsdfgd:true-liquid:0.1.0-alpha02")
 }
 ```
 
-For local development, use the included demo and build tasks until the artifact is published.
+For local development, use the included demo and build tasks.
 
 ## macOS Window
 
-Call `TrueLiquidRuntime.configureProcess()` before creating Compose windows.
-
 ```kotlin
 fun main() = application {
-    TrueLiquidRuntime.configureProcess()
-
     val state = rememberWindowState(size = DpSize(780.dp, 530.dp))
     val style = TrueLiquidDefaults.spotlightStyle()
 
