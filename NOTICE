@@ -1,0 +1,11 @@
+True Liquid Compose
+
+This project includes source adapted from Apache-2.0 projects:
+
+- Liquid by Colin McKee / FletchMcKee
+  https://github.com/FletchMcKee/liquid
+
+- Android Liquid Glass / Backdrop by Kyant
+  https://github.com/Kyant0/AndroidLiquidGlass
+
+The macOS ScreenCaptureKit/AppKit/Metal window backend is True Liquid Compose's native implementation.

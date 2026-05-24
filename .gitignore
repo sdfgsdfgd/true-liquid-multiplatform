@@ -1,0 +1,12 @@
+.DS_Store
+.gradle/
+.kotlin/
+.idea/
+*.iml
+*.log
+hs_err_pid*.log
+build/
+out/
+__pycache__/
+*.py[cod]
+.true-liquid-recovery/
