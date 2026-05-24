@@ -5,6 +5,7 @@ plugins {
     id("org.jetbrains.compose") version "1.9.0-beta01" apply false
     id("org.jetbrains.kotlin.plugin.compose") version "2.1.21" apply false
     id("org.jetbrains.compose.hot-reload") version "1.0.0-beta04" apply false
+    id("com.vanniktech.maven.publish") version "0.34.0" apply false
 }
 
 allprojects {

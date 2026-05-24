@@ -7,6 +7,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.vanniktech.maven.publish")
     `maven-publish`
 }
 
@@ -144,5 +145,15 @@ publishing {
                 developerConnection.set("scm:git:ssh://git@github.com/sdfgsdfgd/true-liquid-multiplatform.git")
             }
         }
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral()
+    if (
+        providers.gradleProperty("signingInMemoryKey").isPresent ||
+        providers.gradleProperty("signing.keyId").isPresent
+    ) {
+        signAllPublications()
     }
 }
